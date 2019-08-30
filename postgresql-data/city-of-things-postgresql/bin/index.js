@@ -6,16 +6,16 @@ const geo = require('latlon-geohash');
 try {
     // POSTGRES
     const pgClient = new Client({
-        user: 'dwight',
-        host: 'postgis',			// Change IP according to docker container of postgis
-        database: 'city-of-things',
-        password: 'dwight'
+        user: '',
+        host: '',			// Change IP according to docker container of postgis
+        database: '',
+        password: ''
     });
     pgClient.connect();
 
     // KAFKA
     //let kafkaClient = new kafka.KafkaClient();
-    let kafkaClient = new kafka.KafkaClient({kafkaHost: '172.17.0.2:9092'});
+    let kafkaClient = new kafka.KafkaClient({kafkaHost: 'XXX.XX.XX.XX:9092'});      // Change XX with IP
     let consumer = new Consumer(kafkaClient, [{topic: 'airquality'}], {fetchMaxBytes: 1024});
     consumer.on('message', async (message) => {
         let data = JSON.parse(message.value);
