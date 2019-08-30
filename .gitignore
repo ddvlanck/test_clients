@@ -1,0 +1,4 @@
+lts-client/timeseries-client/.idea
+lts-client/timeseries-client/node_modules
+postgresql-data/city-of-things-postgresql/.idea
+postgresql-data/city-of-things-postgresql/node_modules
